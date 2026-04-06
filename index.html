@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GsDeol Finishing Carpentry</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #0f0f0f;
+    color: white;
+}
+
+header {
+    background: black;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    color: #00ffcc;
+}
+
+nav {
+    background: #1a1a1a;
+    padding: 10px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+.hero {
+    padding: 80px 20px;
+    text-align: center;
+    background: linear-gradient(to right, #000, #1a1a1a);
+}
+
+.hero h2 {
+    font-size: 32px;
+}
+
+.btn {
+    background: #00ffcc;
+    color: black;
+    padding: 12px 20px;
+    margin: 10px;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background: #00ccaa;
+}
+
+.section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* GALLERY */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.img-card {
+    background: #1a1a1a;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+.img-card::before {
+    content: "● ● ●";
+    display: block;
+    color: #00ffcc;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.gallery img {
+    width: 250px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #00ffcc;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    border-color: white;
+}
+
+/* FULLSCREEN IMAGE */
+#fullscreen {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#fullscreen img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+.review {
+    background: #1a1a1a;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+footer {
+    background: black;
+    padding: 15px;
+    text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>GsDeol Finishing Carpentry</h1>
+<p>Serving Surrey, BC & All of British Columbia</p>
+</header>
+
+<nav>
+<a href="#">Home</a>
+<a href="#services">Services</a>
+<a href="#gallery">Work</a>
+<a href="#reviews">Reviews</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<div class="hero">
+<h2>Expert Carpentry & Finishing in Surrey, BC</h2>
+<p>Reliable • Affordable • Professional Work Guaranteed</p>
+
+<a class="btn" href="tel:17783859647">📞 Call Now</a>
+<a class="btn" href="https://wa.me/17783859647">💬 WhatsApp</a>
+</div>
+
+<div class="section" id="services">
+<h2>Our Services</h2>
+
+<div class="services">
+<div class="card">🚪 Door Installation</div>
+<div class="card">🔐 Lock Installation</div>
+<div class="card">🏠 Crown Molding</div>
+<div class="card">🛠 Baseboards</div>
+<div class="card">🚿 Toilet Bars</div>
+<div class="card">🪵 Floor Renovation</div>
+<div class="card">🧱 Wall Paneling</div>
+</div>
+</div>
+
+<div class="section" id="gallery">
+<h2>Our Work</h2>
+
+<div class="gallery">
+
+<div class="img-card"><img src="IMG-20260406-WA0000.jpg" onclick="openImg(this.src)"></div>
+<div class="img-card"><img src="IMG-20260406-WA0002.jpg" onclick="openImg(this.src)"></div>
+<div class="img-card"><img src="IMG-20260406-WA0001.jpg" onclick="openImg(this.src)"></div>
+<div class="img-card"><img src="WhatsApp Image 2026-04-06 at 3.09.52 PM.jpeg" onclick="openImg(this.src)"></div>
+<div class="img-card"><img src="WhatsApp Image 2026-04-06 at 3.10.07 PM.jpeg" onclick="openImg(this.src)"></div>
+<div class="img-card"><img src="WhatsApp Image 2026-04-06 at 2.24.54 PM.jpeg" onclick="openImg(this.src)"></div>
+<div class="img-card"><img src="WhatsApp Image 2026-04-06 at 2.23.34 PM.jpeg" onclick="openImg(this.src)"></div>
+
+</div>
+</div>
+
+<!-- FULLSCREEN VIEW -->
+<div id="fullscreen" onclick="closeImg()">
+<img id="fullImg">
+</div>
+
+<div class="section" id="reviews">
+<h2>Customer Reviews</h2>
+
+<div class="review">⭐️⭐️⭐️⭐️⭐️ Very clean and professional work!</div>
+<div class="review">⭐️⭐️⭐️⭐️⭐️ Best carpentry service in BC!</div>
+<div class="review">⭐️⭐️⭐️⭐️⭐️ Highly recommend for doors and finishing.</div>
+</div>
+
+<div class="section" id="contact">
+<h2>Contact Us</h2>
+
+<p>📍 129A Street & 72 Ave, Surrey, BC</p>
+<p>📞 +1 778-385-9647</p>
+<p>📞 +1 236-883-2630</p>
+
+<a class="btn" href="tel:17783859647">Call Now</a>
+<a class="btn" href="https://wa.me/17783859647">WhatsApp</a>
+
+</div>
+
+<footer>
+<p>© 2026 GsDeol Finishing Carpentry</p>
+</footer>
+
+<script>
+function openImg(src) {
+    document.getElementById("fullscreen").style.display = "flex";
+    document.getElementById("fullImg").src = src;
+}
+
+function closeImg() {
+    document.getElementById("fullscreen").style.display = "none";
+}
+</script>
+
+</body>
+</html>
+
+
